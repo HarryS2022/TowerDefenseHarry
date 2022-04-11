@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Purple_Enemy : MonoBehaviour
+public class Green_Enemy : MonoBehaviour
 {
-    public int health= 100;
+    public int health = 100;
+
     public float speed = 1;
     public float xTarget;
 
@@ -48,7 +49,7 @@ public class Purple_Enemy : MonoBehaviour
     {
         if (dead())
         {
-            GetComponent<Animator>().SetBool("Dead", true);
+            GetComponent<Animator>().SetBool("dead", true);
         }
     }
 }

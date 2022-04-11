@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_dead_0
+      name: hit and death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 186
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -130,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e2235e2aeebf49dba3fc006d97c19b0
-      internalID: -2085891547
+      spriteID: 6fb7d6bc82c704ecdb3c6a0af9e789bc
+      internalID: 115921048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_1
+      name: hit and death_1
       rect:
         serializedVersion: 2
         x: 0
         y: 155
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -151,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ee993670ecd440e0a5718bc37e54dde
-      internalID: -2026336813
+      spriteID: 58bd31ca6d73a40d29bc4c20b3e4c70f
+      internalID: -920016930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_2
+      name: hit and death_2
       rect:
         serializedVersion: 2
         x: 0
         y: 124
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -172,19 +172,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe78ab00a60b847fdb0699d3a7f7ca0a
-      internalID: 790086418
+      spriteID: b807d4c6469244d70b589a5b7f1a1de1
+      internalID: -1970711260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_3
+      name: hit and death_3
       rect:
         serializedVersion: 2
         x: 0
         y: 93
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -193,19 +193,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56da1f139c1b14161a59f5cd3e41235c
-      internalID: 2060586422
+      spriteID: a88ba8f57c7184dd3a769034f2a3cf29
+      internalID: 973196181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_4
+      name: hit and death_4
       rect:
         serializedVersion: 2
         x: 0
         y: 62
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -214,19 +214,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ba14214b5d894c57888120004aa3370
-      internalID: 1326607790
+      spriteID: ec32c4de14b494ddb9cb1b0bfd3d4043
+      internalID: 556994383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_5
+      name: hit and death_5
       rect:
         serializedVersion: 2
         x: 0
         y: 31
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -235,19 +235,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f301fd339a8f44fc6abacefce0fe497f
-      internalID: 2080085866
+      spriteID: a882c8eae9304492e8df94080ea4bbe0
+      internalID: -1313814502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_dead_6
+      name: hit and death_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 85
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -256,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6af9324dead2247fda045cf65a7ba1a7
-      internalID: -359389012
+      spriteID: 57b69cce350184d67a5df41bb1470677
+      internalID: -515399198
       vertices: []
       indices: 
       edges: []
@@ -273,13 +273,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy_dead_6: -359389012
-      Enemy_dead_2: 790086418
-      Enemy_dead_3: 2060586422
-      Enemy_dead_4: 1326607790
-      Enemy_dead_5: 2080085866
-      Enemy_dead_1: -2026336813
-      Enemy_dead_0: -2085891547
+      hit and death_3: 973196181
+      hit and death_0: 115921048
+      hit and death_4: 556994383
+      hit and death_6: -515399198
+      hit and death_1: -920016930
+      hit and death_2: -1970711260
+      hit and death_5: -1313814502
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
