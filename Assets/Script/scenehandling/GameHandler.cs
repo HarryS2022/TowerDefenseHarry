@@ -14,7 +14,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,12 +40,23 @@ public class GameHandler : MonoBehaviour
     float findY(Collider2D collider, Vector3 mousePos)
     {
         //find the bottom of collider and return its y value
-        return mousePos.y;
+        GameObject Collider = GameObject.Find("ValidPlacement");
+        return Collider.transform.position.y - (Collider.transform.localScale.y) / 2;
     }
 
     public void PlaceArcher()
     {
         isPlacingCharacter = true;
         characterToPlace = ArcherPrefab.gameObject;
+    }
+    public void PlaceKnight()
+    {
+        isPlacingCharacter = true;
+        characterToPlace = KnightPrefab.gameObject;
+    }
+    public void PlaceLancer()
+    {
+        isPlacingCharacter = true;
+        characterToPlace = LancerPrefab.gameObject;
     }
 }

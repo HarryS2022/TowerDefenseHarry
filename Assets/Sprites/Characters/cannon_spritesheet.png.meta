@@ -1,0 +1,558 @@
+fileFormatVersion: 2
+guid: f9901862668604b25899c7ee7f30242f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cannon_move_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 84
+        width: 37
+        height: 26
+      alignment: 9
+      pivot: {x: 0.25420627, y: 0.0000005868765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f30ac2bed6a427aa53493b37d48a31
+      internalID: -1938867255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_move_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 84
+        width: 37
+        height: 26
+      alignment: 9
+      pivot: {x: 0.2653788, y: 0.0000005868765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1213ec4d18dd84f58927e42eb2be2153
+      internalID: -25440257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_move_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 84
+        width: 37
+        height: 26
+      alignment: 9
+      pivot: {x: 0.25420648, y: -0.015898777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c241bd603e0946b0a1ad0ec9de64aed
+      internalID: 216880003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 36
+        width: 37
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2653789, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bc0817e387a4ba289576af62f50c04
+      internalID: 1975630777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 36
+        width: 38
+        height: 44
+      alignment: 9
+      pivot: {x: 0.24979642, y: 0.0093949055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03910fc5bdad4b14bc398815c4db67e
+      internalID: 2121799883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 36
+        width: 35
+        height: 44
+      alignment: 9
+      pivot: {x: 0.2755938, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f977ea3d009414c38a2811eca9f6ae68
+      internalID: 1435199433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 36
+        width: 37
+        height: 44
+      alignment: 9
+      pivot: {x: 0.74579394, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87456ebe129b5426caf2373757b27f65
+      internalID: -574830400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_4
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 36
+        width: 38
+        height: 44
+      alignment: 9
+      pivot: {x: 0.7610827, y: 0.0093949055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb5d1b5ecb7d49d788bdbb8824a654c
+      internalID: -1867493428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_5
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 36
+        width: 37
+        height: 44
+      alignment: 9
+      pivot: {x: 0.75696623, y: 0.0093949055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10247deb0982940298604532f3d38a16
+      internalID: 22860687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 56
+        height: 29
+      alignment: 9
+      pivot: {x: 0.18258299, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855ded50db2b245c1bc7169b9076c494
+      internalID: 598905209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 55
+        height: 29
+      alignment: 9
+      pivot: {x: 0.19935982, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edac39d8a4763465eb6d73244ba55313
+      internalID: 1425217294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_turn_02
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 53
+        height: 29
+      alignment: 9
+      pivot: {x: 0.21141398, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e62802553c2a487d8458f4c7220a694
+      internalID: 1124200419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2
+        width: 60
+        height: 29
+      alignment: 9
+      pivot: {x: 0.16929576, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419cc89b93d224267874b8c147585383
+      internalID: -1824413710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_4
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 2
+        width: 58
+        height: 29
+      alignment: 9
+      pivot: {x: 0.15076473, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543876890abf74b4e89a920791f2b446
+      internalID: -1620058530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_5
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 2
+        width: 60
+        height: 29
+      alignment: 9
+      pivot: {x: 0.16240641, y: -0.013161494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951a3d7e2a25b41d59aa3f6f6982492f
+      internalID: 1217312512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2
+        width: 58
+        height: 29
+      alignment: 9
+      pivot: {x: 0.15076526, y: 0.001092845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bd196db73a847f8834970245e45cc3
+      internalID: -137573486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannon_shoot_7
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 2
+        width: 56
+        height: 29
+      alignment: 9
+      pivot: {x: 0.1825834, y: 0.001092845}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39cdeaf57b5f4891b86e3eed466bf81
+      internalID: 385627684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannonball_0
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 48
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a51b392958040c689a086d2e13df7d
+      internalID: -1736296121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cannonball_1
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 48
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f51c12690d3a48899ae9e0048ae3c6d
+      internalID: 2001629768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cannon_spritesheet_23: 809340568
+      cannon_move_1: -25440257
+      cannonball_1: 2001629768
+      cannon_shoot_6: -137573486
+      cannon_spritesheet_20: -915079610
+      cannon_turn_3: -574830400
+      cannon_turn_02: 1124200419
+      cannon_turn_5: 22860687
+      cannon_shoot_5: 1217312512
+      cannon_turn_4: -1867493428
+      cannon_spritesheet_21: -1303446157
+      cannon_spritesheet_22: 1435199433
+      cannon_turn_: 1003364406
+      cannon_turn_2: 2106776391
+      cannon_spritesheet_19: 598905209
+      cannon_shoot_0: -1824413710
+      cannon_shoot_7: 385627684
+      cannon_shoot_3: -1824413710
+      cannon_spritesheet_18: 216880003
+      cannon_move_2: 1975630777
+      cannon_turn_0: -1938867255
+      cannon_move_0: 2121799883
+      cannon_shoot_4: -1620058530
+      cannon_turn_1: 1425217294
+      cannonball_0: -1736296121
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
