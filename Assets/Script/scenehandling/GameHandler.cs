@@ -32,6 +32,7 @@ public class GameHandler : MonoBehaviour
                 //origin is mouse
                 GameObject character = Instantiate(characterToPlace);
                 character.transform.position = characterPos;
+                character.GetComponent<PlayerCharacter>().validBounds = hit.collider;
             }
             isPlacingCharacter = false;
         }
@@ -40,8 +41,8 @@ public class GameHandler : MonoBehaviour
     float findY(Collider2D collider, Vector3 mousePos)
     {
         //find the bottom of collider and return its y value
-        GameObject Collider = GameObject.Find("ValidPlacement");
-        return Collider.transform.position.y - (Collider.transform.localScale.y) / 2;
+        
+        return collider.transform.position.y - (collider.transform.localScale.y) / 2;
     }
 
     public void PlaceArcher()
