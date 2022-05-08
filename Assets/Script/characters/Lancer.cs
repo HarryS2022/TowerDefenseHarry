@@ -2,33 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lancer : MonoBehaviour
+public class Lancer : PlayerCharacter
 {
-    bool dead = false;
-    public float speed = 1;
-    public float xTarget;
-
-    public bool Firing;
-    private Animator anim;
-    // Start is called before the first frame update
-    void Start()
+    protected override float findXTarget()
     {
-        anim = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!Firing)
+        if (playerState == PlayerStates.random)
         {
-            //anim.SetTrigger("idol");
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), speed * Time.deltaTime);
+            return Random.Range(validBounds.bounds.min.x, validBounds.bounds.max.x);
+        }
+        else if(playerState == PlayerStates.following)
+        {
+            return enemyTarget.transform.position.x;
         }
         else
         {
-            //anim.SetTrigger("fire");
+            return 0; 
         }
+        
+    }
 
+    protected override GameObject findEnemyInRange()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
+        foreach(GameObject enemy in enemies)
+        {
+            if(enemy.transform.position.x >= validBounds.bounds.min.x && enemy.transform.position.x <= validBounds.bounds.max.x &&
+               enemy.transform.position.y >= validBounds.bounds.min.y && enemy.transform.position.y <= validBounds.bounds.max.y)
+            {
+                if (!closestEnemy || Vector2.Distance(enemy.transform.position, transform.position) < Vector2.Distance(closestEnemy.transform.position, transform.position))
+                {
+                    closestEnemy = enemy;
+                }
+            }
+
+        }
+        return closestEnemy;
     }
 
     public void LancerDead()
@@ -39,4 +48,6 @@ public class Lancer : MonoBehaviour
             GetComponent<Animator>().SetBool("dead", true);
         }
     }
+
+
 }

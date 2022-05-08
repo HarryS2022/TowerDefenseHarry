@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
@@ -10,11 +11,19 @@ public class GameHandler : MonoBehaviour
     private bool isPlacingCharacter;
     public LayerMask ValidCharacterPlacementLayer;
     private GameObject characterToPlace;
+    public int gold = 100;
+    public int ArcherPrice = 40;
+    public int KnightPrice = 30;
+    public int LancerPrice = 25;
+    private int cost;
+    private int lives = 5;
+    public Text GoldText;
+    public Text LivesText;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        GoldText.text = gold.ToString();
+        LivesText.text = lives.ToString();
     }
 
     // Update is called once per frame
@@ -31,7 +40,10 @@ public class GameHandler : MonoBehaviour
                 Vector2 characterPos = new Vector2(origin.x, findY(hit.collider, origin));
                 //origin is mouse
                 GameObject character = Instantiate(characterToPlace);
+                gold -= cost;
+                GoldText.text = gold.ToString(); 
                 character.transform.position = characterPos;
+                character.GetComponent<PlayerCharacter>().validBounds = hit.collider;
             }
             isPlacingCharacter = false;
         }
@@ -40,23 +52,38 @@ public class GameHandler : MonoBehaviour
     float findY(Collider2D collider, Vector3 mousePos)
     {
         //find the bottom of collider and return its y value
-        GameObject Collider = GameObject.Find("ValidPlacement");
+        GameObject Collider = collider.gameObject;
         return Collider.transform.position.y - (Collider.transform.localScale.y) / 2;
     }
 
     public void PlaceArcher()
     {
-        isPlacingCharacter = true;
-        characterToPlace = ArcherPrefab.gameObject;
+        if (gold >= ArcherPrice)
+        {
+            isPlacingCharacter = true;
+            characterToPlace = ArcherPrefab.gameObject;
+            cost = ArcherPrice;
+        }
+        
     }
     public void PlaceKnight()
     {
-        isPlacingCharacter = true;
-        characterToPlace = KnightPrefab.gameObject;
+        if (gold >= KnightPrice)
+        {
+            isPlacingCharacter = true;
+            characterToPlace = KnightPrefab.gameObject;
+            cost = KnightPrice;
+        }
+
     }
     public void PlaceLancer()
     {
-        isPlacingCharacter = true;
-        characterToPlace = LancerPrefab.gameObject;
+        if (gold >= LancerPrice)
+        {
+            isPlacingCharacter = true;
+            characterToPlace = LancerPrefab.gameObject;
+            cost = LancerPrice;
+        }
+
     }
 }
