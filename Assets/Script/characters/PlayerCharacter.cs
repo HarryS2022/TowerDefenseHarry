@@ -18,6 +18,7 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected float waitStarted;
     protected bool waiting = false;
 
+
     public enum PlayerStates
     {
         random,
@@ -26,7 +27,7 @@ public abstract class PlayerCharacter : MonoBehaviour
     }
     public PlayerStates playerState;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -40,14 +41,25 @@ public abstract class PlayerCharacter : MonoBehaviour
             if (enemyTarget) playerState = PlayerStates.following;
         }
 
+        if (playerState == PlayerStates.following && Mathf.Abs(findEnemyInRange().transform.position.x - transform.position.x) <= Attackrange())
+        {
+            playerState = PlayerStates.firing;
+        }
+
+        if (playerState == PlayerStates.firing && !findEnemyInRange())
+        {
+            playerState = PlayerStates.random;
+        }
+
         if (playerState == PlayerStates.random)
         {
+            anim.SetTrigger("idol");
             if (waiting && waitStarted + waitTime < Time.time)
             {
                 xTarget = findXTarget();
                 waiting = false;
             }
-            //anim.SetTrigger("idol");
+
             if (!waiting && Mathf.Abs(xTarget - transform.position.x) < speed * Time.deltaTime)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), speed * Time.deltaTime);
@@ -61,16 +73,18 @@ public abstract class PlayerCharacter : MonoBehaviour
         }
         else if (playerState == PlayerStates.following)
         {
+            anim.SetTrigger("idol");
             xTarget = findXTarget();
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), speed * Time.deltaTime);
         }
         else if (playerState == PlayerStates.firing)
         {
-
+            anim.SetTrigger("fire");
         }
 
     }
 
     protected abstract float findXTarget();
     protected abstract GameObject findEnemyInRange();
+    protected abstract float Attackrange();
 }

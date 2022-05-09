@@ -4,30 +4,47 @@ using UnityEngine;
 
 public class Lancer : PlayerCharacter
 {
+    protected float AttackRange = 0.4F;
+    protected override float Attackrange()
+    {
+        return AttackRange;
+    }
     protected override float findXTarget()
     {
         if (playerState == PlayerStates.random)
         {
             return Random.Range(validBounds.bounds.min.x, validBounds.bounds.max.x);
         }
-        else if(playerState == PlayerStates.following)
+        else if (playerState == PlayerStates.following)
         {
-            return enemyTarget.transform.position.x;
+            if (Vector2.Distance(enemyTarget.transform.position, transform.position) <= AttackRange)
+            {
+                return transform.position.x;
+            }
+            else if (transform.position.x > enemyTarget.transform.position.x)
+            {
+                return enemyTarget.transform.position.x + AttackRange;
+            }
+            else
+            {
+                return enemyTarget.transform.position.x - AttackRange;
+            }
+
         }
         else
         {
-            return 0; 
+            return 0;
         }
-        
+
     }
 
     protected override GameObject findEnemyInRange()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closestEnemy = null;
-        foreach(GameObject enemy in enemies)
+        foreach (GameObject enemy in enemies)
         {
-            if(enemy.transform.position.x >= validBounds.bounds.min.x && enemy.transform.position.x <= validBounds.bounds.max.x &&
+            if (enemy.transform.position.x >= validBounds.bounds.min.x && enemy.transform.position.x <= validBounds.bounds.max.x &&
                enemy.transform.position.y >= validBounds.bounds.min.y && enemy.transform.position.y <= validBounds.bounds.max.y)
             {
                 if (!closestEnemy || Vector2.Distance(enemy.transform.position, transform.position) < Vector2.Distance(closestEnemy.transform.position, transform.position))
@@ -39,7 +56,6 @@ public class Lancer : PlayerCharacter
         }
         return closestEnemy;
     }
-
     public void LancerDead()
     {
         if (!dead)
