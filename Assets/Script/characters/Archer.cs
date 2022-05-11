@@ -9,6 +9,7 @@ public class Archer : PlayerCharacter
         return Random.Range(validBounds.bounds.min.x, validBounds.bounds.max.x);
     }
 
+
     public void ArcherDead()
     {
         if (!dead)
@@ -16,5 +17,10 @@ public class Archer : PlayerCharacter
             dead = true;
             GetComponent<Animator>().SetBool("dead", true);
         }
+    }
+
+    protected override GameObject findEnemyInRange()
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -7,14 +7,22 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected bool dead = false;
     public float speed = 1;
     public float xTarget;
-
-    public bool Firing;
+    protected GameObject enemyTarget;
+    
     protected Animator anim;
 
     public float waitTime = 1;
     protected float waitStarted;
     protected bool waiting = false;
     public Collider2D validBounds;
+
+    public enum PlayerStates
+    {
+        random,
+        following,
+        firing
+    }
+    public PlayerStates playerState;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +34,12 @@ public abstract class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Firing)
+        if(playerState != PlayerStates.following || playerState != PlayerStates.firing)
+        {
+            enemyTarget = findEnemyInRange();
+            if (enemyTarget) playerState = PlayerStates.following;
+        }
+        if (playerState == PlayerStates.random)
         {
             if (waiting && waitStarted + waitTime < Time.time)
             {
@@ -45,12 +58,19 @@ public abstract class PlayerCharacter : MonoBehaviour
             }
 
         }
-        else
+        else if(playerState == PlayerStates.following)
         {
-            //anim.SetTrigger("fire");
+            xTarget = findXTarget();
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), speed * Time.deltaTime);
+            
+        }
+        else if(playerState == PlayerStates.firing)
+        {
+
         }
 
     }
 
     protected abstract float findXTarget();
+    protected abstract GameObject findEnemyInRange();
 }
