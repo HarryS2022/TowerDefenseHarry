@@ -2,36 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Green_Enemy : MonoBehaviour
+public class Green_Enemy : EnemyCharacter
 {
     public int health = 100;
 
+    protected float findrange = 4;
+    protected float attackrange = 2;
+
     public float speed = 1;
-    public float xTarget;
 
     public bool Firing;
-    private Animator anim;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override float enemyspeed()
     {
-        anim = GetComponent<Animator>();
+        return speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override float attackRange()
     {
-        if (!Firing)
-        {
-            //anim.SetTrigger("idol");
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), speed * Time.deltaTime);
-        }
-        else
-        {
-            //anim.SetTrigger("fire");
-        }
-
+        return attackrange;
     }
+
+    protected override GameObject findPlayerInRange()
+    {  
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closestPlayer = null;
+        foreach (GameObject player in players)
+        {
+            if (Vector2.Distance(player.transform.position, transform.position) <= findrange)
+            {
+                if (!closestPlayer || Vector2.Distance(player.transform.position, transform.position) < Vector2.Distance(closestPlayer.transform.position, transform.position))
+                {
+                    closestPlayer = player;
+                }
+            }
+        }
+        if (!closestPlayer) return null;
+        return closestPlayer;
+    }
+
 
     public bool dead()
     {
