@@ -23,11 +23,11 @@ public class Archer : PlayerCharacter
             }
             else if (transform.position.x > enemyTarget.transform.position.x)
             {
-                return enemyTarget.transform.position.x + AttackRange;
+                return Mathf.Clamp(enemyTarget.transform.position.x + AttackRange, validBounds.bounds.min.x, validBounds.bounds.max.x);
             }
             else
             {
-                return enemyTarget.transform.position.x - AttackRange;
+                return Mathf.Clamp(enemyTarget.transform.position.x - AttackRange, validBounds.bounds.min.x, validBounds.bounds.max.x);
             }
 
         }
