@@ -1190,6 +1190,7 @@ MonoBehaviour:
   xTarget: 0
   Firing: 0
   waitTime: 1
+  findEnemyYBuffer: 0.1
   playerState: 0
 --- !u!1 &1169328915
 GameObject:
@@ -1495,6 +1496,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7211656678311514049, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
+      propertyPath: validBounds
+      value: 
+      objectReference: {fileID: 2058456303}
     - target: {fileID: 7211656678311514050, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1542,6 +1547,10 @@ PrefabInstance:
     - target: {fileID: 7211656678311514053, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
       propertyPath: m_Name
       value: Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211656678311514053, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
@@ -1919,11 +1928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.6
+      value: -9.79
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.83
+      value: -3.209
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.z
