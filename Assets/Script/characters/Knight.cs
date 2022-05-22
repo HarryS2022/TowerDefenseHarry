@@ -44,7 +44,8 @@ public class Knight : PlayerCharacter
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.transform.position.x >= validBounds.bounds.min.x - findEnemyYBuffer && enemy.transform.position.x <= validBounds.bounds.max.x &&
+            EnemyCharacter enemyChar = enemy.GetComponent<EnemyCharacter>();
+            if (enemy.transform.position.x >= validBounds.bounds.min.x - enemyChar.width / 2 && enemy.transform.position.x <= validBounds.bounds.max.x + enemyChar.width / 2 &&
                enemy.transform.position.y >= validBounds.bounds.min.y - findEnemyYBuffer && enemy.transform.position.y <= validBounds.bounds.max.y)
             {
                 if (!closestEnemy || Vector2.Distance(enemy.transform.position, transform.position) < Vector2.Distance(closestEnemy.transform.position, transform.position))

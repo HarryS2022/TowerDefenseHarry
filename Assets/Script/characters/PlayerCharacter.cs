@@ -24,6 +24,10 @@ public abstract class PlayerCharacter : MonoBehaviour
 
     [SerializeField] protected float findEnemyYBuffer = 0.1f;
 
+
+    public int attackPower = 5;
+
+
     public enum PlayerStates
     {
         random,
@@ -37,6 +41,8 @@ public abstract class PlayerCharacter : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         xTarget = transform.position.x;
+
+        
     }
 
     void Update()
@@ -51,7 +57,11 @@ public abstract class PlayerCharacter : MonoBehaviour
             enemyTarget = findEnemyInRange();
             if (enemyTarget && Mathf.Abs(enemyTarget.transform.position.x - transform.position.x) <= Attackrange())
             {
+                Debug.Log(gameObject.name + " set to playerState = PlayerStates.firing");
                 playerState = PlayerStates.firing;
+            }else if (enemyTarget)
+            {
+                Debug.Log(gameObject.name + " findEnemyInRange() " + Mathf.Abs(enemyTarget.transform.position.x - transform.position.x));
             }
         }
 
@@ -91,6 +101,7 @@ public abstract class PlayerCharacter : MonoBehaviour
             if (AttackWaitStarted + AttackWaitTime <= Time.time)
             {
                 anim.SetTrigger("fire");
+                enemyTarget.SendMessage("TakeDamage", attackPower);
                 AttackWaitStarted = Time.time;
             }
         } 
@@ -105,5 +116,10 @@ public abstract class PlayerCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //take damage when hit by enemy attack
+    }
+
+    public virtual void TakeDamageAnim(int health)
+    {
+
     }
 }

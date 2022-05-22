@@ -123,58 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &51791375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7211656678311514053, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
-  m_PrefabInstance: {fileID: 1489268916}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &51791380
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51791375}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.032096446, y: 0.21915722}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.21364057, y: 0.43831444}
-  m_EdgeRadius: 0
---- !u!50 &51791381
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51791375}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &88148964
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +580,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1244,6 +1192,7 @@ MonoBehaviour:
   waitTime: 1
   AttackWaitTime: 2
   findEnemyYBuffer: 0.1
+  attackPower: 5
   playerState: 0
 --- !u!1 &1169328915
 GameObject:
@@ -1966,10 +1915,6 @@ PrefabInstance:
     - target: {fileID: 5727580573984862400, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_Name
       value: Green_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5727580573984862400, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_RootOrder

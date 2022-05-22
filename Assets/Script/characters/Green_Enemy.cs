@@ -61,4 +61,6 @@ public class Green_Enemy : EnemyCharacter
             GetComponent<Animator>().SetBool("dead", true);
         }
     }
+
+  
 }
