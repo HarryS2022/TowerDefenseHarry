@@ -6,6 +6,7 @@ public abstract class EnemyCharacter : MonoBehaviour
 {
     protected float xTarget = 9;
     protected Animator anim;
+    public float width;
     public enum EnemyStates
     {
         invading,
@@ -61,4 +62,9 @@ public abstract class EnemyCharacter : MonoBehaviour
     protected abstract float enemyspeed();
     protected abstract GameObject findPlayerInRange();
     protected abstract float attackRange();
+
+    public virtual void TakeDamageAnim(int health)
+    {
+
+    }
 }

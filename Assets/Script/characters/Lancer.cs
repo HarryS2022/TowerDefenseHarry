@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lancer : PlayerCharacter
 {
-    protected float AttackRange = 0.4F;
+    protected float AttackRange = 0.39F;
     protected override float Attackrange()
     {
         return AttackRange;
@@ -17,17 +17,17 @@ public class Lancer : PlayerCharacter
         }
         else if (playerState == PlayerStates.following)
         {
-            if (Vector2.Distance(enemyTarget.transform.position, transform.position) <= AttackRange)
+            if (Mathf.Abs(enemyTarget.transform.position.x - transform.position.x) <= AttackRange)
             {
                 return transform.position.x;
             }
             else if (transform.position.x > enemyTarget.transform.position.x)
             {
-                return enemyTarget.transform.position.x + AttackRange;
+                return enemyTarget.transform.position.x + AttackRange-0.0001f;
             }
             else
             {
-                return enemyTarget.transform.position.x - AttackRange;
+                return enemyTarget.transform.position.x - AttackRange+0.0001f;
             }
 
         }
@@ -44,8 +44,9 @@ public class Lancer : PlayerCharacter
         GameObject closestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.transform.position.x >= validBounds.bounds.min.x-findEnemyYBuffer && enemy.transform.position.x <= validBounds.bounds.max.x &&
-               enemy.transform.position.y >= validBounds.bounds.min.y-findEnemyYBuffer && enemy.transform.position.y <= validBounds.bounds.max.y)
+            EnemyCharacter enemyChar = enemy.GetComponent<EnemyCharacter>();
+            if (enemy.transform.position.x >= validBounds.bounds.min.x - enemyChar.width/2 && enemy.transform.position.x <= validBounds.bounds.max.x + enemyChar.width/2 &&
+               enemy.transform.position.y >= validBounds.bounds.min.y - enemyChar.width/2 && enemy.transform.position.y <= validBounds.bounds.max.y + enemyChar.width / 2)
             {
                 if (!closestEnemy || Vector2.Distance(enemy.transform.position, transform.position) < Vector2.Distance(closestEnemy.transform.position, transform.position))
                 {
