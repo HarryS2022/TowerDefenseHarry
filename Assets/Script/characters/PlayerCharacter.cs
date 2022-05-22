@@ -18,6 +18,10 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected float waitStarted;
     protected bool waiting = false;
 
+    public float AttackWaitTime = 2;
+    protected float AttackWaitStarted = 0;
+    protected bool AttackWaiting = false;
+
     [SerializeField] protected float findEnemyYBuffer = 0.1f;
 
     public enum PlayerStates
@@ -84,8 +88,13 @@ public abstract class PlayerCharacter : MonoBehaviour
         }
         else if (playerState == PlayerStates.firing)
         {
-            anim.SetTrigger("fire");
-        }
+            if (AttackWaitStarted + AttackWaitTime <= Time.time)
+            {
+                anim.SetTrigger("fire");
+                AttackWaitStarted = Time.time;
+            }
+        } 
+        
 
     }
 

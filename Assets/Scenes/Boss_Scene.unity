@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArcherPrefab: {fileID: 7211656678311514049, guid: 5d53aa723e008437c94df7521124d30d, type: 3}
-  LancerPrefab: {fileID: 1200469892208827404, guid: 5838fe1b404b4459fa9c47e1a4fe1e90, type: 3}
+  LancerPrefab: {fileID: 3220974194449520959, guid: fff3a1f98a0f14cb98277c566443a3c7, type: 3}
   KnightPrefab: {fileID: 229402036098181857, guid: 3ba83435de5fd4db8a04a3deb63f7c5b, type: 3}
   ValidCharacterPlacementLayer:
     serializedVersion: 2
@@ -1242,6 +1242,7 @@ MonoBehaviour:
   xTarget: 0
   Firing: 0
   waitTime: 1
+  AttackWaitTime: 2
   findEnemyYBuffer: 0.1
   playerState: 0
 --- !u!1 &1169328915
@@ -1976,11 +1977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.68
+      value: -6.62
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.25
+      value: -3.21
       objectReference: {fileID: 0}
     - target: {fileID: 5727580573984862403, guid: 86e8786f5655d47fdb78f6a2efaf546f, type: 3}
       propertyPath: m_LocalPosition.z
