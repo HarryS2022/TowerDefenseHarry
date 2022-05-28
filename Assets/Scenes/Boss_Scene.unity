@@ -1218,6 +1218,8 @@ MonoBehaviour:
   findEnemyYBuffer: 0.1
   attackPower: 5
   playerState: 0
+  arrowPrefab: {fileID: 0}
+  FireLoc: {fileID: 0}
 --- !u!1 &1169328915
 GameObject:
   m_ObjectHideFlags: 0

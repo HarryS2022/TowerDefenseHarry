@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Archer : PlayerCharacter
 {
+    public Arrow arrowPrefab;
     protected float AttackRange = 4;
     protected override float Attackrange()
     {
@@ -65,5 +66,11 @@ public class Archer : PlayerCharacter
         }
     }
 
-
+    public Transform FireLoc;
+    public void FireArrow()
+    {
+        Arrow arrow = Instantiate(arrowPrefab);
+        arrow.transform.position = FireLoc.position;
+        arrow.Fire(enemyTarget.transform.position);
+    }
 }

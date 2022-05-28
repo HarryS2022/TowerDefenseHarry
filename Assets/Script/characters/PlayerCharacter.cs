@@ -102,9 +102,10 @@ public abstract class PlayerCharacter : MonoBehaviour
                 enemyTarget.SendMessage("TakeDamage", attackPower);
                 AttackWaitStarted = Time.time;
             }
-        } 
-        
+        }
 
+        if (xTarget > transform.position.x) transform.localScale = new Vector3(-1, 1, 1);
+        else if(xTarget < transform.position.x) transform.localScale = new Vector3(1, 1, 1);
     }
 
     protected abstract float findXTarget();
