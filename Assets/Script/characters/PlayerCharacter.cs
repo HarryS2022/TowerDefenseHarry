@@ -44,7 +44,9 @@ public abstract class PlayerCharacter : MonoBehaviour
     }
 
     void Update()
-    {   if (playerState != PlayerStates.following || playerState != PlayerStates.firing)
+    {
+
+        if (playerState != PlayerStates.following || playerState != PlayerStates.firing)
         {
             enemyTarget = findEnemyInRange();
             if (enemyTarget) playerState = PlayerStates.following;
@@ -102,9 +104,9 @@ public abstract class PlayerCharacter : MonoBehaviour
                 enemyTarget.SendMessage("TakeDamage", attackPower);
                 AttackWaitStarted = Time.time;
             }
-        } 
-        
-
+        }
+        if (xTarget > transform.position.x) transform.localScale = new Vector3(-1, 1, 1);
+        else if (xTarget < transform.position.x) transform.localScale = new Vector3(1, 1, 1);
     }
 
     protected abstract float findXTarget();

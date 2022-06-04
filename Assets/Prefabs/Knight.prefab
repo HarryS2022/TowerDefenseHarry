@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -689776419, guid: c9f19731910a54bb9bddac7adc97261e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -127,6 +127,7 @@ MonoBehaviour:
   waitTime: 1
   AttackWaitTime: 2
   findEnemyYBuffer: 0.1
+  attackPower: 5
   playerState: 0
 --- !u!61 &5118077062023390535
 BoxCollider2D:

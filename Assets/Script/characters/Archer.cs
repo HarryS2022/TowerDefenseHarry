@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Archer : PlayerCharacter
 {
+    public Arrow arrowPrefab;
     protected float AttackRange = 4;
     protected override float Attackrange()
     {
         return AttackRange;
     }
+
+
     protected override float findXTarget()
     {
         if (playerState == PlayerStates.random)
@@ -65,5 +68,12 @@ public class Archer : PlayerCharacter
         }
     }
 
+    public Transform FireLoc;
+    public void FireArrow()
+    {
+        Arrow arrow = Instantiate(arrowPrefab);
+        arrow.transform.position = FireLoc.transform.position;
+        arrow.Fire(enemyTarget.transform.position);
+    }
 
 }

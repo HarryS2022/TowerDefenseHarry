@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         health = Mathf.Clamp(health - damage, 0, maxHealth);
+        if (health <= 0)
+            gameObject.SendMessage("youdied", gameObject);
         Vector3 localScale = healthBar.localScale;
         healthBar.localScale = new Vector3(healthBarLength * health / maxHealth, localScale.y, localScale.z);
         gameObject.SendMessage("TakeDamageAnim", health);

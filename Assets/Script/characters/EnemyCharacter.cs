@@ -7,6 +7,12 @@ public abstract class EnemyCharacter : MonoBehaviour
     protected float xTarget = 9;
     protected Animator anim;
     public float width;
+
+    public int Greenenemyattackpower = 8;
+    public float GAttackWaitTime = 2;
+    protected float GAttackWaitStarted = 0;
+    protected bool GAttackWaiting = false;
+
     public enum EnemyStates
     {
         invading,
@@ -55,13 +61,30 @@ public abstract class EnemyCharacter : MonoBehaviour
 
         if (enemyState == EnemyStates.firing)
         {
-            anim.SetTrigger("attack");
+            if (GAttackWaitStarted + GAttackWaitTime <= Time.time)
+            {
+                anim.SetTrigger("attack");
+                findPlayerInRange().SendMessage("TakeDamage", Greenenemyattackpower);
+                GAttackWaitStarted = Time.time;
+            }
         }
     }
 
     protected abstract float enemyspeed();
     protected abstract GameObject findPlayerInRange();
     protected abstract float attackRange();
+
+    public virtual void hit()
+    {
+        anim.SetTrigger("hit");
+    }
+
+    public virtual void youdied(GameObject a)
+    {
+        GetComponent<Animator>().SetBool("dead", true);
+        anim.SetTrigger("hit");
+        Destroy(a);
+    }
 
     public virtual void TakeDamageAnim(int health)
     {
