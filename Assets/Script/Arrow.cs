@@ -23,9 +23,16 @@ public class Arrow : MonoBehaviour
 
     public void Fire(Vector2 targetPos)
     {
+        float velocity = 10;
         //add in some randomness and adjuct for range
         horizontalvelocity = Mathf.Abs(transform.position.x - targetPos.x) / 2 * Mathf.Sqrt((float)(2.5 /0.5));
         verticalvelocity = 10 / Mathf.Sqrt((float)(2.5 /0.5));
+
+        float dx = transform.position.x - targetPos.x;
+        float dy = transform.position.y - targetPos.y;
+
+        if()
+
         if (transform.position.x > targetPos.x)
             rb.velocity = (new Vector2(-1, 1)).normalized * Mathf.Sqrt((Mathf.Pow(horizontalvelocity, 2) + Mathf.Pow(verticalvelocity, 2)));
         else
