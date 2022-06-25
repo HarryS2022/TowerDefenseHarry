@@ -68,6 +68,7 @@ public abstract class PlayerCharacter : MonoBehaviour
         if ((playerState == PlayerStates.firing || playerState == PlayerStates.following) && !findEnemyInRange())
         {
             playerState = PlayerStates.random;
+            xTarget = transform.position.x;
         }
 
         if (playerState == PlayerStates.random)
@@ -98,6 +99,7 @@ public abstract class PlayerCharacter : MonoBehaviour
         }
         else if (playerState == PlayerStates.firing)
         {
+            xTarget = enemyTarget.transform.position.x;
             if (AttackWaitStarted + AttackWaitTime <= Time.time)
             {
                 anim.SetTrigger("fire");
