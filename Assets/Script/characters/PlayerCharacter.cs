@@ -124,4 +124,11 @@ public abstract class PlayerCharacter : MonoBehaviour
     {
         
     }
+
+    public virtual void youdied(GameObject a)
+    {
+        GetComponent<Animator>().SetBool("dead", true);
+        anim.SetTrigger("hit");
+        Destroy(a);
+    }
 }

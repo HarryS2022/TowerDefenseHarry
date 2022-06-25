@@ -7,7 +7,7 @@ public class Arrow : MonoBehaviour
     public Rigidbody2D rb;
     private float verticalvelocity;
     private float horizontalvelocity;
-
+    public float dampening = 0.9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,32 +25,16 @@ public class Arrow : MonoBehaviour
     {
         //add in some randomness and adjuct for range
 
-        float dx = Mathf.Abs(transform.position.x - targetPos.x);
-        float dy = Mathf.Abs(transform.position.y - targetPos.y);
-        
+        float dx = transform.position.x - targetPos.x;
+        float dy = transform.position.y - targetPos.y;
 
-        if(dy < 0)
-        {
+        float Vx = Mathf.Sqrt(Mathf.Abs((dx * dx * (9.81f)) / (dy - dx)));
+        Debug.Log($"dx = {dx} dy = {dy} Vx = {Vx}");
 
-        }
+        if (transform.position.x > targetPos.x)
+            rb.velocity = (new Vector2(-1, 1)) * Vx * dampening * Random.Range(0.99f, 1.01f);
         else
-        {
-            if (transform.position.x <= targetPos.x && (-dy + Mathf.Sqrt((float)(dy * dy + 2 * 9.81 * dx))) / 2 > 0){
-                horizontalvelocity = (-9.81f*dy + Mathf.Sqrt((float)(96.2361f * dy * 96.2361f * dy + 1888.15f * dx))) / 19.62f;
-            }
-            else
-            {
-                horizontalvelocity = (-dy - Mathf.Sqrt((float)(dy * dy + 2 * 9.81 * dx))) / 2;
-            }
-            
-            float velocity = Mathf.Sqrt(Mathf.Pow(horizontalvelocity, 2) * 2);
-            rb.velocity = (new Vector2(-1, 1)).normalized * velocity;
-        }
-
-        //if (transform.position.x > targetPos.x)
-            //rb.velocity = (new Vector2(-1, 1)).normalized * velocity;
-        //else
-        //    rb.velocity = (new Vector2(1, 1)).normalized * Mathf.Sqrt((Mathf.Pow(horizontalvelocity, 2) + Mathf.Pow(verticalvelocity, 2)));
+            rb.velocity = (new Vector2(1, 1)) * Vx * dampening * Random.Range(0.97f, 1.03f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
