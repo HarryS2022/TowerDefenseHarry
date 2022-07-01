@@ -115,6 +115,13 @@ public abstract class PlayerCharacter : MonoBehaviour
     protected abstract GameObject findEnemyInRange();
     protected abstract float Attackrange();
 
+    public virtual void youdied(GameObject a)
+    {
+        GetComponent<Animator>().SetBool("dead", true);
+        anim.SetTrigger("hit");
+        Destroy(a);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //take damage when hit by enemy attack
