@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyCharacter : MonoBehaviour
 {
-    protected float xTarget = 9;
+    [SerializeField] protected float xTarget = 9;
     protected Animator anim;
     public float width;
 
@@ -31,7 +31,7 @@ public abstract class EnemyCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xTarget = 9;
+
 
         if (findPlayerInRange() == null || Mathf.Abs(findPlayerInRange().transform.position.y - transform.position.y) > 1
 )
@@ -49,6 +49,8 @@ public abstract class EnemyCharacter : MonoBehaviour
         
         if (enemyState == EnemyStates.invading)
         {
+            //needs to be made public?
+            xTarget = 9;
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(xTarget, transform.position.y), enemyspeed() * Time.deltaTime);
             anim.SetTrigger("walk");
         }
@@ -64,11 +66,14 @@ public abstract class EnemyCharacter : MonoBehaviour
         {
             if (GAttackWaitStarted + GAttackWaitTime <= Time.time)
             {
+                xTarget = findPlayerInRange().transform.position.x;
                 anim.SetTrigger("attack");
                 findPlayerInRange().SendMessage("TakeDamage", Greenenemyattackpower);
                 GAttackWaitStarted = Time.time;
             }
         }
+        if (xTarget > transform.position.x) transform.localScale = new Vector3(1, 1, 1);
+        else if (xTarget < transform.position.x) transform.localScale = new Vector3(-1, 1, 1);
     }
 
     protected abstract float enemyspeed();

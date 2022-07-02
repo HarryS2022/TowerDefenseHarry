@@ -57,11 +57,11 @@ public abstract class PlayerCharacter : MonoBehaviour
             enemyTarget = findEnemyInRange();
             if (enemyTarget && Mathf.Abs(enemyTarget.transform.position.x - transform.position.x) <= Attackrange())
             {
-                Debug.Log(gameObject.name + "set to playerState = PlayerStates.firing");
+                //Debug.Log(gameObject.name + "set to playerState = PlayerStates.firing");
                 playerState = PlayerStates.firing;
             }else if (enemyTarget)
             {
-                Debug.Log(gameObject.name + " findEnemyInRange");
+                //Debug.Log(gameObject.name + " findEnemyInRange");
             }
         }
 

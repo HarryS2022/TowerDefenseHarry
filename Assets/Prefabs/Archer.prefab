@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 986544265459738849}
   - component: {fileID: 51791381}
   - component: {fileID: 51791380}
-  - component: {fileID: 51791387}
   - component: {fileID: 51791388}
   m_Layer: 0
   m_Name: Archer
@@ -324,19 +323,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21364057, y: 0.43831444}
   m_EdgeRadius: 0
---- !u!114 &51791387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7211656678311514053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684ca10e5da2144bd957f7e9580345a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameStartScene: BossScene
 --- !u!114 &51791388
 MonoBehaviour:
   m_ObjectHideFlags: 0
