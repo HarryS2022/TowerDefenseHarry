@@ -33,7 +33,8 @@ public abstract class EnemyCharacter : MonoBehaviour
     {
         xTarget = 9;
 
-        if (findPlayerInRange() == null)
+        if (findPlayerInRange() == null || Mathf.Abs(findPlayerInRange().transform.position.y - transform.position.y) > 1
+)
         {
             enemyState = EnemyStates.invading;
         }
