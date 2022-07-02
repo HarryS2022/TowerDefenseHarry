@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
 
     private void LoadScene()
     {
+        Debug.Log(gameObject.name);
         SceneManager.LoadScene(GameStartScene);
     }
 

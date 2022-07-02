@@ -31,6 +31,14 @@ public class EnemySpawnHandler : MonoBehaviour
         }
     }
 
+    public int remainingEnemies
+    {
+        get
+        {
+            return enemyCount + greenCount + purpleCount;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
