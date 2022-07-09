@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     private float healthBarLength;
     [SerializeField] protected Transform healthBar;
 
-    void Start()
+    void Awake()
     {
         maxHealth = health;
         healthBarLength = healthBar.localScale.x;
@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
         health = Mathf.Clamp(health - damage, 0, maxHealth);
         if (health <= 0)
             gameObject.SendMessage("youdied", gameObject);
+
         Vector3 localScale = healthBar.localScale;
         healthBar.localScale = new Vector3(healthBarLength * health / maxHealth, localScale.y, localScale.z);
         gameObject.SendMessage("TakeDamageAnim", health);

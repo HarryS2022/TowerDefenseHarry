@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyCharacter : MonoBehaviour
 {
-    public GameHandler gamehandler;
+    private GameHandler gamehandler;
     [SerializeField] protected float xTarget = 9;
     protected Animator anim;
     public float width;
@@ -27,6 +27,7 @@ public abstract class EnemyCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gamehandler = FindObjectOfType<GameHandler>();
         anim = GetComponent<Animator>();
     }
 
@@ -35,8 +36,8 @@ public abstract class EnemyCharacter : MonoBehaviour
     {
         if (transform.position.x == 9)
         {
-            gamehandler.lives--;
-            Destroy(transform);
+            gamehandler.AddLives(-1);
+            Destroy(gameObject);
         }
 
         if (findPlayerInRange() == null || Mathf.Abs(findPlayerInRange().transform.position.y - transform.position.y) > 1
@@ -90,13 +91,14 @@ public abstract class EnemyCharacter : MonoBehaviour
     {
         anim.SetTrigger("hit");
     }
-
+    public int goldDrop = 30;
     public virtual void youdied(GameObject a)
     {
         GetComponent<Animator>().SetBool("dead", true);
         anim.SetTrigger("hit");
+        gamehandler.AddGold(goldDrop);
         Destroy(a);
-        gamehandler.gold += 30;
+        
     }
 
     public virtual void TakeDamageAnim(int health)

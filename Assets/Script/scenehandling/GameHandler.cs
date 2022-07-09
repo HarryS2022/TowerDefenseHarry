@@ -130,4 +130,16 @@ public class GameHandler : MonoBehaviour
         }
 
     }
+
+    public void AddGold(int gold)
+    {
+        this.gold += gold;
+        GoldText.text = this.gold.ToString();
+    }
+
+    public void AddLives(int lives)
+    {
+        this.lives += lives;
+        LivesText.text = this.lives.ToString();
+    }
 }

@@ -28,13 +28,16 @@ public class Arrow : MonoBehaviour
         float dx = transform.position.x - targetPos.x;
         float dy = transform.position.y - targetPos.y;
 
-        float Vx = Mathf.Sqrt(Mathf.Abs((dx * dx * (9.81f)) / (dy - dx)));
+        float Vx = Mathf.Sqrt(Mathf.Abs((dx * dx * (9.81f)) / (Mathf.Abs(dy) + Mathf.Abs(dx))));
         Debug.Log($"dx = {dx} dy = {dy} Vx = {Vx}");
 
         if (transform.position.x > targetPos.x)
-            rb.velocity = (new Vector2(-1, 1)) * Vx * dampening * Random.Range(0.99f, 1.01f);
+            rb.velocity = (new Vector2(-1, 1)) * Vx * dampening * Random.Range(0.97f, 1.03f);
         else
+        {
             rb.velocity = (new Vector2(1, 1)) * Vx * dampening * Random.Range(0.97f, 1.03f);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

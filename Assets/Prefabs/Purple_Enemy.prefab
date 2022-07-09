@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589274832019617402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.26, y: 1.81, z: 0.020613855}
+  m_LocalPosition: {x: 0.02, y: 1.81, z: 0.020613855}
   m_LocalScale: {x: 0.61, y: 0.41, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a0b24f63a3e9743a28a860cf4b2b4fd1, type: 3}
+  m_Sprite: {fileID: -714454576, guid: 92b716072b5074a74ad4dab8d5dc1c42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -220,10 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e74571e661844ca9f4a2092962e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 0
+  xTarget: 9
+  width: 0.5
   Greenenemyattackpower: 8
   GAttackWaitTime: 2
   enemyState: 0
+  goldDrop: 30
   health: 100
   speed: 1
   Firing: 0
@@ -261,16 +263,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.2696805, y: 0.57232225}
+  m_Offset: {x: 0.05125928, y: 0.77051103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 7.3125, y: 1.625}
+    pivot: {x: 0.4, y: 0}
+    oldSize: {x: 3.4375, y: 1.625}
     newSize: {x: 7.3125, y: 1.625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7556448, y: 1.1446445}
+  m_Size: {x: 0.72229815, y: 1.3580787}
   m_EdgeRadius: 0
