@@ -4,14 +4,16 @@ using UnityEngine;
 
 public abstract class EnemyCharacter : MonoBehaviour
 {
+    public GameHandler gamehandler;
     [SerializeField] protected float xTarget = 9;
     protected Animator anim;
     public float width;
-
+    
     public int Greenenemyattackpower = 8;
     public float GAttackWaitTime = 2;
     protected float GAttackWaitStarted = 0;
     protected bool GAttackWaiting = false;
+
 
     public enum EnemyStates
     {
@@ -31,7 +33,11 @@ public abstract class EnemyCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.x == 9)
+        {
+            gamehandler.lives--;
+            Destroy(transform);
+        }
 
         if (findPlayerInRange() == null || Mathf.Abs(findPlayerInRange().transform.position.y - transform.position.y) > 1
 )
@@ -90,6 +96,7 @@ public abstract class EnemyCharacter : MonoBehaviour
         GetComponent<Animator>().SetBool("dead", true);
         anim.SetTrigger("hit");
         Destroy(a);
+        gamehandler.gold += 30;
     }
 
     public virtual void TakeDamageAnim(int health)

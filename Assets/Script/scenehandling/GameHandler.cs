@@ -17,9 +17,11 @@ public class GameHandler : MonoBehaviour
     public int KnightPrice = 30;
     public int LancerPrice = 25;
     private int cost;
-    [SerializeField] private int lives = 5;
+    public int lives = 5;
     public Text GoldText;
     public Text LivesText;
+
+    
 
     public bool gameOver = false;
     public EnemySpawnHandler spawner;
